@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { KanbanComponent } from './kanban/kanban.component';
 
 const routes: Routes = [
-  { path: 'kanban-component', component: KanbanComponent},
+  { path: 'kanban', component: KanbanComponent},
 ];
 
 @NgModule({
