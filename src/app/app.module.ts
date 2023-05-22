@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KanbanComponent } from './kanban/kanban.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KanbanComponent
+    KanbanComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
