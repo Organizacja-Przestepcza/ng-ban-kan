@@ -6,12 +6,13 @@
 }
 .logo {
     font-size: large;
-    font-weight: bolder;
-    background-color: white;
+    font-weight: 900;
+    background-color: var(--red);
     padding: .5em;
     border: none;
-    /* border: 2px solid white; */
-    border-radius: 16px;
+    color: var(--white);
+    border: 2px dashed white;
+    border-radius: 8px;
     width: fit-content;
     /* margin: .2em 0.5em; */
     cursor: pointer;
