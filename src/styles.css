@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
+    --black:#0f0f0f;
+    --white:#ffeeee;
     --red: #f03030 ;
+    --orange:#f8861c;
+    --green:#22a31d;
   }
 
 @font-face {

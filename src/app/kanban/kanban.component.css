@@ -13,11 +13,11 @@
 }
 .card-header{
     border-radius: 16px 16px 0em 0em;
-    color: #ffeeee;
+    color: var(--white);
     padding: 0.5em 1em;
 }
 .card-body{
-    background-color: #ffeeee;
+    background-color: var(--white);
     border-radius:0 0 16px 16px;
   
 }
@@ -25,8 +25,21 @@
     background-color: var(--red);
 }
 .header-orange{
-    background-color: #f8861c;
+    background-color: var(--orange);
 }
 .header-green{
-    background-color: #22a31d;
+    background-color: var(--green);
+}
+input{
+    font-size: x-large;
+    
+    width: 100%;
+    border-radius:0 0 16px 16px;
+    background-color: var(--white);
+    color:var(--black);
+    box-sizing: border-box;
+}
+.input-area > .card-header{
+    width: 40%;
+    background-color: rebeccapurple;
 }
