@@ -31,22 +31,48 @@
     background-color: var(--green);
 }
 input{
-    font-size: x-large;
+    font-size: xx-large;
     width: 100%;
-    border-radius:0 0 16px 16px;
     background-color: var(--white);
     color:var(--black);
     box-sizing: border-box;
+    border: none;
+    border-radius: 16px;
+    padding: .5em;
+}
+input:focus{
+    border: none;
+    outline: none;
 }
 .input-area > .card-header{
     width: 40%;
+    border-radius:16px;
     background-color: rebeccapurple;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+    padding: 0.5em 0 0 0;
 }
 .input-area > .card-header > .card-body{
     padding: 0%;
     width: 100%;
- background-color: magenta;   
+    border-radius:0 0 16px 16px;
+ background-color: var(--white);   
+}
+#input-label{
+   display: block;
+   margin: 0.5em;
+   background-color: rebeccapurple;
+}
+.button {
+    display: flex;
+    color: var(--black);
+    font-size: x-large;
+    border-radius: 8px;
+    font-weight: 900;
+    cursor: pointer;
+    background-color:  var(--white);
+    transition-duration: 300ms;
+    border: none;
+    padding: 0.2em 0.5em;
+}
+.button:hover {
+    opacity: 0.6;
 }
