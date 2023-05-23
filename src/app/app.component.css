@@ -2,15 +2,17 @@
     background-color: var(--red);
     height: 10%;
     padding: .5em;
+    margin-bottom: 2em;
 }
 .logo {
-    font-size: x-large;
+    font-size: large;
     font-weight: bolder;
     background-color: white;
-    padding: .7em;
-    border: 2px solid white;
+    padding: .5em;
+    border: none;
+    /* border: 2px solid white; */
     border-radius: 16px;
     width: fit-content;
-    margin: .2em 1em;
+    /* margin: .2em 0.5em; */
     cursor: pointer;
 }
