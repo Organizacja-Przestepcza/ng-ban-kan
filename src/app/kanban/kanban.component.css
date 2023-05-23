@@ -32,7 +32,6 @@
 }
 input{
     font-size: x-large;
-    
     width: 100%;
     border-radius:0 0 16px 16px;
     background-color: var(--white);
@@ -42,4 +41,12 @@ input{
 .input-area > .card-header{
     width: 40%;
     background-color: rebeccapurple;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+.input-area > .card-header > .card-body{
+    padding: 0%;
+    width: 100%;
+ background-color: magenta;   
 }

@@ -1,7 +1,13 @@
 .container {
+    
     text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .button {
+    height: 2.5em;
     color: white;
     font-size: xx-large;
     border-radius: 16px;
