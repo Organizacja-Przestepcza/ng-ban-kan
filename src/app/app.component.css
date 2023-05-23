@@ -1,16 +1,16 @@
 .site-header {
     background-color: var(--red);
+
     height: 10%;
     padding: .5em;
 }
 .logo {
     font-size: x-large;
     font-weight: bolder;
-    background-color: white;
-    padding: .7em;
+    background-color: #ffeeee;
+    padding: .5em;
     border: 2px solid white;
     border-radius: 16px;
     width: fit-content;
     margin: .2em 1em;
-    cursor: pointer;
 }
