@@ -1,8 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --red: #f03030 ;
+  }
+
 @font-face {
     font-family: "Wix";
     src: local("Wix"), url(/assets/fonts/WixMadeforDisplay/WixMadeforDisplay-Regular.ttf) format("truetype");
 }
 *{
     font-family: Wix;
+    background-color: #0f0f0f;
+    margin: 0;
+    padding: 0;
+    margin: auto;
 }

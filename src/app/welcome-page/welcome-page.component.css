@@ -3,13 +3,13 @@
 }
 .button {
     color: white;
-    font-size: 28px;
-    border-radius: 24px;
-    padding: 15px;
+    font-size: xx-large;
+    border-radius: 16px;
+    padding: .5em;
     cursor: pointer;
-    background-color: #f03030;
-    border-color: #f03030;
+    background-color:  var(--red);
     transition-duration: 300ms;
+    border: none;
 }
 .button:hover {
     background-color: #ffeeee;

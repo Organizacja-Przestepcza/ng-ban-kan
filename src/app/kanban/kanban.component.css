@@ -1,0 +1,32 @@
+.flexbox-inline{
+    display: inline-flex;
+    width: 100%;
+}
+.card{
+    flex: 1;
+    word-break: keep-all;
+    text-align: center;
+    /* border: 0px solid #ffeeee; */
+    border-top: none;
+    height: 300px;
+    margin: 2em;
+}
+.card-header{
+    border-radius: 16px 16px 0em 0em;
+    color: #ffeeee;
+    padding: 0.5em 1em;
+}
+.card-body{
+    background-color: #ffeeee;
+    border-radius:0 0 16px 16px;
+  
+}
+.header-red{
+    background-color: var(--red);
+}
+.header-orange{
+    background-color: #f8861c;
+}
+.header-green{
+    background-color: #22a31d;
+}
