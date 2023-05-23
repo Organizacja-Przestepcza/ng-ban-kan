@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './kanban.component.html',
   styleUrls: ['./kanban.component.css']
 })
-export class KanbanComponent {
 
+export class KanbanComponent {
+  fruits: string[] = ['Apple', 'Orange', 'Banana'];
 }

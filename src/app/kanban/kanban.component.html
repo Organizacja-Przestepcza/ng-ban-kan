@@ -11,7 +11,13 @@
 <div class="flexbox-inline">
     <div class="card">
         <div class="card-header header-red">Requested</div>
-        <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt vel provident sapiente, accusantium similique tenetur, officiis laudantium, blanditiis id sit. Saepe nesciunt delectus odio earum voluptates, vel quas amet.</div>
+        <div class="card-body">
+          
+                <li *ngFor="let fruit of fruits; index as i;">
+                  {{ i + 1 }}. {{ fruit }}
+                </li>
+        
+        </div>
     </div>
     <div class="card">
         <div class="card-header header-orange">In-progress</div>

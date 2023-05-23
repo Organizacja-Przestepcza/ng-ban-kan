@@ -13,9 +13,11 @@
 }
 *{
     font-family: Wix;
-    background-color: #202020;
     margin: 0;
     padding: 0;
     margin: auto;
  
+}
+body{
+    background-color: #202020; 
 }
