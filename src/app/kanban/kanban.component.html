@@ -2,29 +2,32 @@
     <button class="button" routerLink="/welcome-page-component"> &lt; </button>
 </div> -->
 
-    <div class="input-area">
-        <div class="card-header"> <span id="input-label">Enter text here...</span> 
-            <div class="card-body"><input type="text" name="note" id="note"></div>
-        </div>
+<div class="input-area">
+    <div class="card-header">
+        <span id="input-label">Enter task here...</span>
+        <div class="card-body"><input type="text" name="note" id="note"></div>
+    </div>
 </div>
 
 <div class="flexbox-inline">
     <div class="card">
         <div class="card-header header-red">Requested</div>
         <div class="card-body">
-          
+            <ul>
                 <li *ngFor="let fruit of fruits; index as i;">
-                  {{ i + 1 }}. {{ fruit }}
+                    {{ i + 1 }}. {{ fruit }}
                 </li>
-        
+            </ul>
         </div>
     </div>
     <div class="card">
         <div class="card-header header-orange">In-progress</div>
-        <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, nobis consequuntur! Facilis fuga et placeat, iusto ipsa eveniet deleniti dolor! Ipsa iure at quidem nesciunt porro dignissimos accusamus sint corrupti.</div>
+        <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, nobis consequuntur!
+            Facilis fuga et placeat, iusto ipsa eveniet deleniti dolor! Ipsa iure at quidem nesciunt porro dignissimos
+            accusamus sint corrupti.</div>
     </div>
     <div class="card">
         <div class="card-header header-green">Done</div>
-        <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos accusantium, mollitia quos perferendis ea sequi esse sapiente. Labore quasi tenetur quod necessitatibus architecto impedit animi sequi ipsam culpa quaerat! Ratione.</div>
+        <div class="card-body">Ratione.</div>
     </div>
 </div>

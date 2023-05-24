@@ -1,8 +1,9 @@
-.flexbox-inline{
+.flexbox-inline {
     display: inline-flex;
     width: 100%;
 }
-.card{
+
+.card {
     flex: 1;
     word-break: keep-all;
     text-align: center;
@@ -12,57 +13,68 @@
     margin: 2em;
     box-shadow: 2px rgba(0, 0, 0, 0.8);
 }
-.card-header{
-    border-radius: 16px 16px 0em 0em;
+
+.card-header {
+    border-radius: 16px 16px 0 0;
     color: var(--white);
     padding: 0.5em 1em;
 }
-.card-body{
+
+.card-body {
     background-color: var(--white);
-    border-radius:0 0 16px 16px;
-  
+    border-radius: 0 0 16px 16px;
+    padding: 0.3em;
 }
-.header-red{
+
+.header-red {
     background-color: var(--red);
 }
-.header-orange{
+
+.header-orange {
     background-color: var(--orange);
 }
-.header-green{
+
+.header-green {
     background-color: var(--green);
 }
-input{
-    font-size: xx-large;
+
+input {
+    font-size: x-large;
     width: 100%;
     background-color: var(--white);
-    color:var(--black);
+    color: var(--black);
     box-sizing: border-box;
     border: none;
     border-radius: 16px;
     padding: .5em;
 }
-input:focus{
+
+input:focus {
     border: none;
     outline: none;
 }
-.input-area > .card-header{
+
+.input-area>.card-header {
     width: 40%;
-    border-radius:16px;
+    border-radius: 16px;
     background-color: rebeccapurple;
     padding: 0.5em 0 0 0;
 }
-.input-area > .card-header > .card-body{
+
+.input-area>.card-header>.card-body {
     padding: 0%;
     width: 100%;
-    border-radius:0 0 16px 16px;
- background-color: var(--white);   
+    border-radius: 0 0 16px 16px;
+    background-color: var(--white);
 }
-#input-label{
-   display: block;
-   margin: 0.5em;
-   background-color: rebeccapurple;
+
+#input-label {
+    display: block;
+    margin: 0.5em;
+    background-color: rebeccapurple;
 }
-.button {
+
+/* .button {
     margin: 0.5em;
     display: inline-flex;
     color: var(--black);
@@ -77,4 +89,7 @@ input:focus{
 }
 .button:hover {
     opacity: 0.6;
+} */
+ul {
+    list-style-type: none;
 }
