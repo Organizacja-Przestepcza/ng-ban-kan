@@ -1,20 +1,20 @@
 .site-header {
-    background-color: var(--red);
-    height: 10%;
-    padding: .5em;
-    margin-bottom: 2em;
+  background-color: var(--red);
+  height: 10%;
+  padding: 0.5em;
+  margin-bottom: 2em;
 }
 
 .logo {
-    font-size: large;
-    font-weight: 900;
-    background-color: var(--red);
-    padding: .5em;
-    border: none;
-    color: var(--white);
-    border: 2px dashed white;
-    border-radius: 8px;
-    width: fit-content;
-    /* margin: .2em 0.5em; */
-    cursor: pointer;
+  font-size: large;
+  font-weight: 900;
+  background-color: var(--red);
+  padding: 0.5em;
+  border: none;
+  color: var(--white);
+  border: 2px dashed white;
+  border-radius: 8px;
+  width: fit-content;
+  /* margin: .2em 0.5em; */
+  cursor: pointer;
 }

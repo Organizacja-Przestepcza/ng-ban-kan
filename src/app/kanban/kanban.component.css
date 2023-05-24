@@ -1,77 +1,77 @@
 .flexbox-inline {
-    display: inline-flex;
-    width: 100%;
+  display: inline-flex;
+  width: 100%;
 }
 
 .card {
-    flex: 1;
-    word-break: keep-all;
-    text-align: center;
-    /* border: 0px solid #ffeeee; */
-    border-top: none;
-    height: 300px;
-    margin: 2em;
-    box-shadow: 2px rgba(0, 0, 0, 0.8);
+  flex: 1;
+  word-break: keep-all;
+  text-align: center;
+  /* border: 0px solid #ffeeee; */
+  border-top: none;
+  height: 300px;
+  margin: 2em;
+  box-shadow: 2px rgba(0, 0, 0, 0.8);
 }
 
 .card-header {
-    border-radius: 16px 16px 0 0;
-    color: var(--white);
-    padding: 0.5em 1em;
+  border-radius: 16px 16px 0 0;
+  color: var(--white);
+  padding: 0.5em 1em;
 }
 
 .card-body {
-    background-color: var(--white);
-    border-radius: 0 0 16px 16px;
-    padding: 0.3em;
+  background-color: var(--white);
+  border-radius: 0 0 16px 16px;
+  padding: 0.3em;
 }
 
 .header-red {
-    background-color: var(--red);
+  background-color: var(--red);
 }
 
 .header-orange {
-    background-color: var(--orange);
+  background-color: var(--orange);
 }
 
 .header-green {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 
 input {
-    font-size: x-large;
-    width: 100%;
-    background-color: var(--white);
-    color: var(--black);
-    box-sizing: border-box;
-    border: none;
-    border-radius: 16px;
-    padding: .5em;
+  font-size: x-large;
+  width: 100%;
+  background-color: var(--white);
+  color: var(--black);
+  box-sizing: border-box;
+  border: none;
+  border-radius: 16px;
+  padding: 0.5em;
 }
 
 input:focus {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 
-.input-area>.card-header {
-    width: 40%;
-    border-radius: 16px;
-    background-color: rebeccapurple;
-    padding: 0.5em 0 0 0;
+.input-area > .card-header {
+  width: 40%;
+  border-radius: 16px;
+  background-color: rebeccapurple;
+  padding: 0.5em 0 0 0;
 }
 
-.input-area>.card-header>.card-body {
-    padding: 0%;
-    width: 100%;
-    border-radius: 0 0 16px 16px;
-    background-color: var(--white);
+.input-area > .card-header > .card-body {
+  padding: 0%;
+  width: 100%;
+  border-radius: 0 0 16px 16px;
+  background-color: var(--white);
 }
 
 #input-label {
-    display: block;
-    margin: 0.5em;
-    background-color: rebeccapurple;
+  display: block;
+  margin: 0.5em;
+  background-color: rebeccapurple;
 }
 
 /* .button {
@@ -91,5 +91,5 @@ input:focus {
     opacity: 0.6;
 } */
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }

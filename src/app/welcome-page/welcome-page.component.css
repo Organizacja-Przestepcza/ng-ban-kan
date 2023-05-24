@@ -1,26 +1,26 @@
 .container {
-    text-align: center;
-    padding: 5em;
+  text-align: center;
+  padding: 5em;
 }
 
 .button {
-    height: 2.5em;
-    color: white;
-    font-size: xx-large;
-    border-radius: 16px;
-    padding: .5em;
-    cursor: pointer;
-    background-color: var(--red);
-    transition-duration: 300ms;
-    border: none;
+  height: 2.5em;
+  color: white;
+  font-size: xx-large;
+  border-radius: 16px;
+  padding: 0.5em;
+  cursor: pointer;
+  background-color: var(--red);
+  transition-duration: 300ms;
+  border: none;
 }
 
 .button:hover {
-    background-color: #ffeeee;
-    color: black;
+  background-color: #ffeeee;
+  color: black;
 }
 
 #welcome-text {
-    padding: 2em;
-    color: var(--white);
+  padding: 2em;
+  color: var(--white);
 }
