@@ -4,14 +4,14 @@
 
 <div class="input-area">
   <div class="card-header">
-    <span id="input-label">Enter task here...</span>
-    <div class="card-body"><input type="text" name="note" id="note" /></div>
+    <span id="input-label">Add a new task</span>
+    <div class="card-body"><input placeholder="Enter text here..." name="note" id="note" /></div>
   </div>
 </div>
 
 <div class="flexbox-inline">
   <div class="card">
-    <div class="card-header header-red">Requested</div>
+    <div class="card-header header-red">Not started</div>
     <div class="card-body">
       <ul>
         <li *ngFor="let fruit of fruits; index as i">
