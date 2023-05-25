@@ -99,8 +99,7 @@ export type TaskT = {
 @Component({
   selector: 'app-kanban-taskdialog',
   templateUrl: 'kanban-taskdialog.html',
-  styleUrls: ['kanban-taskdialog.css'],
-  standalone: true,
+  styleUrls: ['kanban-taskdialog.css']
 })
 export class KanbanTaskDialog {
   constructor(@Inject(DIALOG_DATA) public data: TaskT) {}
