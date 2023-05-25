@@ -9,16 +9,25 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class KanbanComponent {
   constructor(public dialog: Dialog) {}
-  localData(){
-    var taskList: Array<TaskT>
+  localData() {
+    let taskList: Array<TaskT>;
     let json = localStorage.getItem('localArray');
-    if (json !== null) taskList = JSON.parse(json);
-    else taskList = [];
+    if (json !== null) {
+      taskList = JSON.parse(json);
+    } else taskList = [];
     return taskList;
   }
   taskList: Array<TaskT> = this.localData();
+  localId() {
+    let localId: number;
+    let json = localStorage.getItem('localArray');
+    if (json !== null) {
+      localId = JSON.parse(json);
+    } else localId = 0;
+    return localId;
+  }
   newTask: string = '';
-  nextId: number = 0;
+  nextId: number = this.localId();
   addTask() {
     console.log('Task #' + this.nextId + ' added');
     this.taskList.push({
@@ -29,6 +38,7 @@ export class KanbanComponent {
     });
     this.newTask = '';
     this.nextId += 1;
+    localStorage.setItem('localId', JSON.stringify(this.nextId));
     console.log(this.taskList);
     localStorage.setItem('localArray', JSON.stringify(this.taskList));
   }
