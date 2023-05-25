@@ -6,6 +6,7 @@
         <input
           matInput
           #note
+          name="note"
           maxlength="256"
           [(ngModel)]="newTask"
           (keyup.enter)="addTask()"
