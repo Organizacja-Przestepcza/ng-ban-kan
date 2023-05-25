@@ -1,0 +1,19 @@
+.container {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  margin: 5em;
+  padding: 0.5em;
+}
+.content {
+  flex: 3;
+  margin: 1em;
+  padding: 0.2em;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.data {
+  flex: 4;
+}

@@ -1,8 +1,5 @@
-import {
-  DragDropModule,
-  CdkDrag,
-  CdkDropList,
-} from '@angular/cdk/drag-drop';
+import { DragDropModule, CdkDrag, CdkDropList } from '@angular/cdk/drag-drop';
+import { DialogModule } from '@angular/cdk/dialog';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,11 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    KanbanComponent,
-    WelcomePageComponent,
-  ],
+  declarations: [AppComponent, KanbanComponent, WelcomePageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
+    DialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

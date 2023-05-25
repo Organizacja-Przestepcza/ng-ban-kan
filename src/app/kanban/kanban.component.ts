@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Component , Inject} from '@angular/core';
+import { Dialog, DIALOG_DATA } from '@angular/cdk/dialog';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-kanban',
@@ -7,6 +8,8 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./kanban.component.css'],
 })
 export class KanbanComponent {
+  constructor(public dialog: Dialog) {}
+
   taskList: Array<TaskT> = [];
   newTask: string = '';
   nextId: number = 0;
@@ -40,16 +43,25 @@ export class KanbanComponent {
   }
   drop(event: CdkDragDrop<TaskT[]>) {
     console.log(event);
-    moveItemInArray(event.container.data,event.previousIndex,event.currentIndex)
-    if (event.container.id == "list1") {
+    moveItemInArray(
+      event.container.data,
+      event.previousIndex,
+      event.currentIndex
+    );
+    if (event.container.id == 'list1') {
       let id = event.item.data.id;
       this.startTask(id);
     }
-    if (event.container.id == "list2")
-    {
+    if (event.container.id == 'list2') {
       let id = event.item.data.id;
       this.completeTask(id);
     }
+  }
+  openTask(id: number) {
+    let index = this.taskList.findIndex((e) => e.id == id);
+    this.dialog.open(KanbanTaskDialog, {
+      data: this.taskList[index]
+    });
   }
 }
 
@@ -61,3 +73,15 @@ type TaskT = {
   completeDate?: Date;
   status: number; // 0 - not started ; 1 - in-progress ; 2 - completed
 };
+
+
+@Component({
+  selector: 'app-kanban-taskdialog',
+  templateUrl: 'kanban-taskdialog.html',
+  styleUrls: ['kanban-taskdialog.css'],
+  standalone: true,
+})
+export class KanbanTaskDialog {
+  constructor(@Inject(DIALOG_DATA) public data: TaskT) {}
+  task: TaskT = this.data;
+}
