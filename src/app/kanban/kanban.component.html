@@ -1,130 +1,122 @@
-<!-- <div>
-    <button class="button" routerLink="/welcome-page-component"> &lt; </button>
-</div> -->
-
-<div class="input-area">
-  <div class="card-header">&nbsp;</div>
-    <form class="card-body">
-      <mat-form-field class="example-full-width">
-        <input matInput #note maxlength="256" [(ngModel)]="newTask"
-        (keyup.enter)="addTask()"
-        placeholder="Enter text here..."
-        name="note"
-        id="note">
-        <mat-hint align="end">{{note.value.length}} / 256</mat-hint>
+<div class="container">
+  <div class="input-area">
+    <form>
+      <mat-form-field class="input-line">
+        <mat-label>Add new task here</mat-label>
+        <input
+          matInput
+          #note
+          maxlength="256"
+          [(ngModel)]="newTask"
+          (keyup.enter)="addTask()"
+        />
+        <mat-hint class="hint" align="end"
+          >{{ note.value.length }} / 256</mat-hint
+        >
       </mat-form-field>
     </form>
   </div>
 
-
-<div class="flexbox-inline">
-  <div class="card">
-    <div class="card-header header-red">Not started</div>
-    <div
-      cdkDropList
-      [cdkDropListData]="taskList"
-      [cdkDropListConnectedTo]="['list1', 'list2']"
-      (cdkDropListDropped)="drop($event)"
-      class="card-body"
-    >
-      <div cdkDrag [cdkDragData]="task" *ngFor="let task of taskList">
-        <div *ngIf="task.status == 0" class="task-tile">
-          <div class="task-content">{{ task.content }}</div>
-          <div class="task-data">
-            <div class="task-date">
-              {{ task.addDate | date : "dd-MM-y, HH:mm:ss" }}
-            </div>
-            <div class="task-buttons-container">
-              <button (click)="startTask(task.id)" class="task-button">
-                Start
-              </button>
-              <button
-                (click)="openTask(task.id)"
-                class="task-button"
-              >
-                Expand
-              </button>
-              <button
-                (click)="removeTask(task.id)"
-                class="task-button task-delete"
-              >
-                Delete
-              </button>
+  <div class="flexbox-inline">
+    <div class="card">
+      <div class="card-header header-red">Not started</div>
+      <div
+        cdkDropList
+        [cdkDropListData]="taskList"
+        [cdkDropListConnectedTo]="['list1', 'list2']"
+        (cdkDropListDropped)="drop($event)"
+        class="card-body"
+      >
+        <div cdkDrag [cdkDragData]="task" *ngFor="let task of taskList">
+          <div *ngIf="task.status == 0" class="task-tile">
+            <div class="task-content">{{ task.content }}</div>
+            <div class="task-data">
+              <div class="task-date">
+                {{ task.addDate | date : "dd-MM-y, HH:mm:ss" }}
+              </div>
+              <div class="task-buttons-container">
+                <button (click)="startTask(task.id)" class="task-button">
+                  Start
+                </button>
+                <button (click)="openTask(task.id)" class="task-button">
+                  Expand
+                </button>
+                <button
+                  (click)="removeTask(task.id)"
+                  class="task-button task-delete"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header header-orange">In-progress</div>
-    <div
-      cdkDropList
-      id="list1"
-      [cdkDropListData]="taskList"
-      (cdkDropListDropped)="drop($event)"
-      [cdkDropListConnectedTo]="['list2']"
-      class="card-body"
-    >
-      <div cdkDrag [cdkDragData]="task" *ngFor="let task of taskList">
-        <div *ngIf="task.status == 1" class="task-tile">
-          <div class="task-content">{{ task.content }}</div>
-          <div class="task-data">
-            <div class="task-date">
-              {{ task.startDate | date : "dd-MM-y, HH:mm:ss" }}
-            </div>
-            <div class="task-buttons-container">
-              <button (click)="completeTask(task.id)" class="task-button">
-                Complete
-              </button>
-              <button
-                (click)="openTask(task.id)"
-                class="task-button"
-              >
-                Expand
-              </button>
-              <button
-                (click)="removeTask(task.id)"
-                class="task-button task-delete"
-              >
-                Delete
-              </button>
+    <div class="card">
+      <div class="card-header header-orange">In-progress</div>
+      <div
+        cdkDropList
+        id="list1"
+        [cdkDropListData]="taskList"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListConnectedTo]="['list2']"
+        class="card-body"
+      >
+        <div cdkDrag [cdkDragData]="task" *ngFor="let task of taskList">
+          <div *ngIf="task.status == 1" class="task-tile">
+            <div class="task-content">{{ task.content }}</div>
+            <div class="task-data">
+              <div class="task-date">
+                {{ task.startDate | date : "dd-MM-y, HH:mm:ss" }}
+              </div>
+              <div class="task-buttons-container">
+                <button (click)="completeTask(task.id)" class="task-button">
+                  Complete
+                </button>
+                <button (click)="openTask(task.id)" class="task-button">
+                  Expand
+                </button>
+                <button
+                  (click)="removeTask(task.id)"
+                  class="task-button task-delete"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header header-green">Done</div>
-    <div
-      cdkDropList
-      id="list2"
-      [cdkDropListData]="taskList"
-      (cdkDropListDropped)="drop($event)"
-      [cdkDropListConnectedTo]="['list1']"
-      class="card-body"
-    >
-      <div cdkDrag [cdkDragData]="task" *ngFor="let task of taskList">
-        <div *ngIf="task.status == 2" class="task-tile">
-          <div class="task-content">{{ task.content }}</div>
-          <div class="task-data">
-            <div class="task-date">
-              {{ task.completeDate | date : "dd-MM-y, HH:mm:ss" }}
-            </div>
-            <div class="task-buttons-container">
-              <button
-                (click)="openTask(task.id)"
-                class="task-button"
-              >
-                Expand
-              </button>
-              <button
-                (click)="removeTask(task.id)"
-                class="task-button task-delete"
-              >
-                Delete
-              </button>
+    <div class="card">
+      <div class="card-header header-green">Done</div>
+      <div
+        cdkDropList
+        id="list2"
+        [cdkDropListData]="taskList"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListConnectedTo]="['list1']"
+        class="card-body"
+      >
+        <div cdkDrag [cdkDragData]="task" *ngFor="let task of taskList">
+          <div *ngIf="task.status == 2" class="task-tile">
+            <div class="task-content">{{ task.content }}</div>
+            <div class="task-data">
+              <div class="task-date">
+                {{ task.completeDate | date : "dd-MM-y, HH:mm:ss" }}
+              </div>
+              <div class="task-buttons-container">
+                <button (click)="openTask(task.id)" class="task-button">
+                  Expand
+                </button>
+                <button
+                  (click)="removeTask(task.id)"
+                  class="task-button task-delete"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         </div>
