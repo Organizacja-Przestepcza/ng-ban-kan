@@ -23,7 +23,7 @@
     <div
       cdkDropList
       [cdkDropListData]="taskList"
-      [cdkDropListConnectedTo]="['list1','list2']"
+      [cdkDropListConnectedTo]="['list1', 'list2']"
       (cdkDropListDropped)="drop($event)"
       class="card-body"
     >
@@ -37,6 +37,12 @@
             <div class="task-buttons-container">
               <button (click)="startTask(task.id)" class="task-button">
                 Start
+              </button>
+              <button
+                (click)="openTask(task.id)"
+                class="task-button"
+              >
+                Expand
               </button>
               <button
                 (click)="removeTask(task.id)"
@@ -72,6 +78,12 @@
                 Complete
               </button>
               <button
+                (click)="openTask(task.id)"
+                class="task-button"
+              >
+                Expand
+              </button>
+              <button
                 (click)="removeTask(task.id)"
                 class="task-button task-delete"
               >
@@ -101,6 +113,12 @@
               {{ task.completeDate | date : "dd-MM-y, HH:mm:ss" }}
             </div>
             <div class="task-buttons-container">
+              <button
+                (click)="openTask(task.id)"
+                class="task-button"
+              >
+                Expand
+              </button>
               <button
                 (click)="removeTask(task.id)"
                 class="task-button task-delete"
