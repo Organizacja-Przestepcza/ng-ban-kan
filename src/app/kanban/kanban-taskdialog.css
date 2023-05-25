@@ -2,18 +2,28 @@
   background-color: var(--white);
   display: flex;
   flex-direction: column;
+  text-align: center;
   border-radius: 16px;
-  margin: 5em;
+  margin: 2em;
   padding: 0.5em;
 }
 .content {
+  font-size:larger;
   flex: 3;
   margin: 1em;
-  padding: 0.2em;
-  text-align: center;
+  padding: 0.5em;
   word-wrap: break-word;
   word-break: break-all;
 }
 .data {
-  flex: 4;
+  margin-top: 2em;
+  font-size:small;
+  display: flex;
+  flex: 1;
+}
+.id-cell {
+  flex:1;
+}
+.data-cell {
+  flex:2;
 }

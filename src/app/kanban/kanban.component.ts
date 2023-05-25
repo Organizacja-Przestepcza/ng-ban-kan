@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { Dialog, DIALOG_DATA } from '@angular/cdk/dialog';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-kanban',
@@ -31,10 +32,15 @@ export class KanbanComponent {
   addTask() {
     if (this.newTask != '') {
       console.log('Task #' + this.nextId + ' added');
+      let newDate = new Date();
+      let date = formatDate(newDate,'dd.MM.y, HH:mm:ss','en-US');
       this.taskList.push({
         id: this.nextId,
         content: this.newTask,
-        addDate: new Date(),
+        addDate: newDate,
+        addDateString: date,
+        startDateString: 'not started yet',
+        completeDateString: 'not completed yet',
         status: 0,
       });
       this.newTask = '';
@@ -47,15 +53,21 @@ export class KanbanComponent {
   startTask(id: number) {
     console.log('Task #' + id + ' started');
     let index: number = this.taskList.findIndex((e) => e.id == id);
+    let newDate = new Date();
+    let date = formatDate(newDate,'dd.MM.y, HH:mm:ss','en-US');
     this.taskList[index].status = 1;
-    this.taskList[index].startDate = new Date();
+    this.taskList[index].startDate = newDate;
+    this.taskList[index].startDateString = date;
     localStorage.setItem('localArray', JSON.stringify(this.taskList));
   }
   completeTask(id: number) {
     console.log('Task #' + id + ' completed');
     let index: number = this.taskList.findIndex((e) => e.id == id);
+    let newDate = new Date();
+    let date = formatDate(newDate,'dd.MM.y, HH:mm:ss','en-US');
     this.taskList[index].status = 2;
-    this.taskList[index].completeDate = new Date();
+    this.taskList[index].completeDate = newDate;
+    this.taskList[index].completeDateString = date;
     localStorage.setItem('localArray', JSON.stringify(this.taskList));
   }
   removeTask(id: number) {
@@ -91,8 +103,11 @@ export type TaskT = {
   id: number;
   content: string;
   addDate: Date;
+  addDateString?: string;
   startDate?: Date;
+  startDateString?: string;
   completeDate?: Date;
+  completeDateString?: string;
   status: number; // 0 - not started ; 1 - in-progress ; 2 - completed
 };
 
