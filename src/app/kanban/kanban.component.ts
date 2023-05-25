@@ -1,4 +1,4 @@
-import { Component , Inject} from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Dialog, DIALOG_DATA } from '@angular/cdk/dialog';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
@@ -9,8 +9,14 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class KanbanComponent {
   constructor(public dialog: Dialog) {}
-
-  taskList: Array<TaskT> = [];
+  localData(){
+    var taskList: Array<TaskT>
+    let json = localStorage.getItem('localArray');
+    if (json !== null) taskList = JSON.parse(json);
+    else taskList = [];
+    return taskList;
+  }
+  taskList: Array<TaskT> = this.localData();
   newTask: string = '';
   nextId: number = 0;
   addTask() {
@@ -24,26 +30,26 @@ export class KanbanComponent {
     this.newTask = '';
     this.nextId += 1;
     console.log(this.taskList);
-    localStorage.setItem('localArray',JSON.stringify(this.taskList));
+    localStorage.setItem('localArray', JSON.stringify(this.taskList));
   }
   startTask(id: number) {
     console.log('Task #' + id + ' started');
     let index: number = this.taskList.findIndex((e) => e.id == id);
     this.taskList[index].status = 1;
     this.taskList[index].startDate = new Date();
-    localStorage.setItem('localArray',JSON.stringify(this.taskList));
+    localStorage.setItem('localArray', JSON.stringify(this.taskList));
   }
   completeTask(id: number) {
     console.log('Task #' + id + ' completed');
     let index: number = this.taskList.findIndex((e) => e.id == id);
     this.taskList[index].status = 2;
     this.taskList[index].completeDate = new Date();
-    localStorage.setItem('localArray',JSON.stringify(this.taskList));
+    localStorage.setItem('localArray', JSON.stringify(this.taskList));
   }
   removeTask(id: number) {
     console.log('Task #' + id + ' removed');
     this.taskList = this.taskList.filter((e) => e.id != id);
-    localStorage.setItem('localArray',JSON.stringify(this.taskList));
+    localStorage.setItem('localArray', JSON.stringify(this.taskList));
   }
   drop(event: CdkDragDrop<TaskT[]>) {
     console.log(event);
@@ -64,12 +70,12 @@ export class KanbanComponent {
   openTask(id: number) {
     let index = this.taskList.findIndex((e) => e.id == id);
     this.dialog.open(KanbanTaskDialog, {
-      data: this.taskList[index]
+      data: this.taskList[index],
     });
   }
 }
 
-type TaskT = {
+export type TaskT = {
   id: number;
   content: string;
   addDate: Date;
@@ -77,7 +83,6 @@ type TaskT = {
   completeDate?: Date;
   status: number; // 0 - not started ; 1 - in-progress ; 2 - completed
 };
-
 
 @Component({
   selector: 'app-kanban-taskdialog',
