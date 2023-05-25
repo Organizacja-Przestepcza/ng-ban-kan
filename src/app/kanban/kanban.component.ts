@@ -1,4 +1,4 @@
-import { Component , Inject} from '@angular/core';
+import { Component , Inject, Input} from '@angular/core';
 import { Dialog, DIALOG_DATA } from '@angular/cdk/dialog';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
