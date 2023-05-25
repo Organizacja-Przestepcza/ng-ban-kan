@@ -3,19 +3,19 @@
 </div> -->
 
 <div class="input-area">
-  <div class="card-header">
-    <span id="input-label">Add a new task</span>
-    <div class="card-body">
-      <input
-        [(ngModel)]="newTask"
+  <div class="card-header">&nbsp;</div>
+    <form class="card-body">
+      <mat-form-field class="example-full-width">
+        <input matInput #note maxlength="256" [(ngModel)]="newTask"
         (keyup.enter)="addTask()"
         placeholder="Enter text here..."
         name="note"
-        id="note"
-      />
-    </div>
+        id="note">
+        <mat-hint align="end">{{note.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </form>
   </div>
-</div>
+
 
 <div class="flexbox-inline">
   <div class="card">
