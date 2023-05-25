@@ -93,3 +93,20 @@ input:focus {
 ul {
   list-style-type: none;
 }
+.task-tile {
+  border: 2px solid var(--black);
+  border-radius: 8px;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+.task-button {
+  margin: 1.5em 1em 0.2em 1em;
+  padding: 0.2em;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--green);
+}
+.task-delete {
+  background-color: var(--red);
+}
