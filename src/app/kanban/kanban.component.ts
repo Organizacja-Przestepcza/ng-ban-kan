@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-kanban',
@@ -37,9 +38,17 @@ export class KanbanComponent {
     console.log('Task #' + id + ' removed');
     this.taskList = this.taskList.filter((e) => e.id != id);
   }
-  drop(event: TaskT) {
-    if (event.status === event.status) {
-    } else {
+  drop(event: CdkDragDrop<TaskT[]>) {
+    console.log(event);
+    moveItemInArray(event.container.data,event.previousIndex,event.currentIndex)
+    if (event.container.id == "list1") {
+      let id = event.item.data.id;
+      this.startTask(id);
+    }
+    if (event.container.id == "list2")
+    {
+      let id = event.item.data.id;
+      this.completeTask(id);
     }
   }
 }

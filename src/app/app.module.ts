@@ -18,7 +18,11 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, KanbanComponent, WelcomePageComponent],
+  declarations: [
+    AppComponent,
+    KanbanComponent,
+    WelcomePageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
