@@ -140,7 +140,7 @@ ul {
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background-color: var(--green);
+  box-shadow: 0 3px 4px -2px #00000099;
 }
 
 .task-delete {
