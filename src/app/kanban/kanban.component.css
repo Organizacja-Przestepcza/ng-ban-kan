@@ -112,6 +112,8 @@ ul {
 
 .task-content {
   padding: 0.5em;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .task-data {
