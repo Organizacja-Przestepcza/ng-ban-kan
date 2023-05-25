@@ -20,14 +20,25 @@
 <div class="flexbox-inline">
   <div class="card">
     <div class="card-header header-red">Not started</div>
-    <div class="card-body">
+    <div cdkDropList [cdkDropListData]="taskList" class="card-body">
       <ul>
         <li *ngFor="let task of taskList; index as i">
-          <div *ngIf="task.status == 0" class="task-tile">
-            {{ task.content }} , {{ task.addDate | date : "dd-MM-y, HH:mm" }}
-            <br />
-            <button (click)="startTask(task.id)" class="task-button">Start</button>
-            <button (click)="removeTask(task.id)" class="task-button task-delete">Delete</button>
+          <div cdkDrag *ngIf="task.status == 0" class="task-tile">
+            <div class="task-content">{{ task.content }}</div>
+            <div class="task-data">
+              <div class="task-date">{{ task.addDate | date : "dd-MM-y, HH:mm" }}</div>
+              <div class="task-buttons-container">
+                <button (click)="startTask(task.id)" class="task-button">
+                  Start
+                </button>
+                <button
+                  (click)="removeTask(task.id)"
+                  class="task-button task-delete"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
           </div>
         </li>
       </ul>
@@ -35,14 +46,25 @@
   </div>
   <div class="card">
     <div class="card-header header-orange">In-progress</div>
-    <div class="card-body">
+    <div cdkDropList [cdkDropListData]="taskList" class="card-body">
       <ul>
         <li *ngFor="let task of taskList; index as i">
-          <div *ngIf="task.status == 1" class="task-tile">
-            {{ task.content }} ; {{ task.startDate | date : "dd-MM-y, HH:mm" }}
-            <br />
-            <button (click)="completeTask(task.id)" class="task-button">Complete</button>
-            <button (click)="removeTask(task.id)" class="task-button task-delete">Delete</button>
+          <div cdkDrag *ngIf="task.status == 1" class="task-tile">
+            <div class="task-content">{{ task.content }}</div>
+            <div class="task-data">
+              <div class="task-date">{{ task.startDate | date : "dd-MM-y, HH:mm" }}</div>
+              <div class="task-buttons-container">
+              <button (click)="completeTask(task.id)" class="task-button">
+                Complete
+              </button>
+              <button
+                (click)="removeTask(task.id)"
+                class="task-button task-delete"
+              >
+                Delete
+              </button>
+              </div>
+            </div>
           </div>
         </li>
       </ul>
@@ -50,14 +72,22 @@
   </div>
   <div class="card">
     <div class="card-header header-green">Done</div>
-    <div class="card-body">
+    <div cdkDropList [cdkDropListData]="taskList" class="card-body">
       <ul>
         <li *ngFor="let task of taskList; index as i">
-          <div *ngIf="task.status == 2" class="task-tile">
-            {{ task.content }} ;
-            {{ task.completeDate | date : "dd-MM-y, HH:mm" }}
-            <br />
-            <button (click)="removeTask(task.id)" class="task-button task-delete">Delete</button>
+          <div cdkDrag *ngIf="task.status == 2" class="task-tile">
+            <div class="task-content">{{ task.content }}</div>
+            <div class="task-data">
+              <div class="task-date">{{ task.completeDate | date : "dd-MM-y, HH:mm" }}</div>
+              <div class="task-buttons-container">
+              <button
+                (click)="removeTask(task.id)"
+                class="task-button task-delete"
+              >
+                Delete
+              </button>
+              </div>
+            </div>
           </div>
         </li>
       </ul>

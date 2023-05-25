@@ -1,4 +1,8 @@
-import { DragDropModule } from '@angular/cdk/drag-drop';
+import {
+  DragDropModule,
+  CdkDrag,
+  CdkDropList,
+} from '@angular/cdk/drag-drop';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,6 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule,
     DragDropModule,
+    CdkDrag,
+    CdkDropList,
     TextFieldModule,
     MatInputModule,
     MatSelectModule,

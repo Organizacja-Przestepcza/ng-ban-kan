@@ -37,6 +37,11 @@ export class KanbanComponent {
     console.log('Task #' + id + ' removed');
     this.taskList = this.taskList.filter((e) => e.id != id);
   }
+  drop(event: TaskT) {
+    if (event.status === event.status) {
+    } else {
+    }
+  }
 }
 
 type TaskT = {

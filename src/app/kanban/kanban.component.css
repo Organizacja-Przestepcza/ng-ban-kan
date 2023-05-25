@@ -5,7 +5,6 @@
 
 .card {
   flex: 1;
-  word-break: keep-all;
   text-align: center;
   /* border: 0px solid #ffeeee; */
   border-top: none;
@@ -93,20 +92,63 @@ input:focus {
 ul {
   list-style-type: none;
 }
+
 .task-tile {
-  border: 2px solid var(--black);
-  border-radius: 8px;
-  margin: 0.5em;
+  background-color: var(--white);
+  text-align: center;
+  word-break: keep-all;
+  border: 1px solid var(--black);
+  border-radius: 12px;
+  cursor: move;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.task-tile:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.task-content {
   padding: 0.5em;
 }
+
+.task-data {
+  height: fit-content;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5em;
+}
+
+.task-date {
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+}
+
+.task-buttons-container {
+  flex: 1;
+  text-align: right;
+}
+
 .task-button {
-  margin: 1.5em 1em 0.2em 1em;
+  margin: 0.2em;
   padding: 0.2em;
   cursor: pointer;
   border: none;
   border-radius: 4px;
   background-color: var(--green);
 }
+
 .task-delete {
   background-color: var(--red);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
