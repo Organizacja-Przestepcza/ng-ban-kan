@@ -59,12 +59,14 @@ width: 100%;
 color: var(--white);
 }
 .task-tile {
-  background-color: var(--white);
+  background-color: whitesmoke;
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
   text-align: center;
   word-break: keep-all;
   border-radius: 12px;
   cursor: move;
-  box-shadow: 2px 3px 1px 1px rgba(0, 0, 0, 0.2);}
+  box-shadow: 2px 3px 1px 1px rgba(0, 0, 0, 0.3);}
 
 .task-tile:active {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),

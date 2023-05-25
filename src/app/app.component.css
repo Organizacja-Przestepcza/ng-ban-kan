@@ -1,6 +1,5 @@
 .site-header {
   background-color: var(--red);
-  height: 10%;
   padding: 0.5em;
   margin-bottom: 2em;
 }
@@ -15,6 +14,5 @@
   border: 2px dashed white;
   border-radius: 8px;
   width: fit-content;
-  /* margin: .2em 0.5em; */
   cursor: pointer;
 }

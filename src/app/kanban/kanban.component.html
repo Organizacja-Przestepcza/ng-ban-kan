@@ -33,7 +33,7 @@
             <div class="task-content">{{ task.content }}</div>
             <div class="task-data">
               <div class="task-date">
-                {{ task.addDate | date : "dd-MM-y, HH:mm:ss" }}
+                {{ task.addDate | date : "dd-MM-y" }}
               </div>
               <div class="task-buttons-container">
                 <button (click)="startTask(task.id)" class="task-button">
@@ -69,7 +69,7 @@
             <div class="task-content">{{ task.content }}</div>
             <div class="task-data">
               <div class="task-date">
-                {{ task.startDate | date : "dd-MM-y, HH:mm:ss" }}
+                {{ task.startDate | date : "dd-MM-y" }}
               </div>
               <div class="task-buttons-container">
                 <button (click)="completeTask(task.id)" class="task-button">
@@ -105,7 +105,7 @@
             <div class="task-content">{{ task.content }}</div>
             <div class="task-data">
               <div class="task-date">
-                {{ task.completeDate | date : "dd-MM-y, HH:mm:ss" }}
+                {{ task.completeDate | date : "dd-MM-y" }}
               </div>
               <div class="task-buttons-container">
                 <button (click)="openTask(task.id)" class="task-button">

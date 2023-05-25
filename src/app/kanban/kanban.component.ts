@@ -19,28 +19,30 @@ export class KanbanComponent {
   }
   taskList: Array<TaskT> = this.localData();
   localId() {
-    let localId: number;
-    let json = localStorage.getItem('localArray');
+    var localId: number;
+    let json = localStorage.getItem('localId');
     if (json !== null) {
       localId = JSON.parse(json);
-    } else localId = 0;
+    } else localId = 1;
     return localId;
   }
   newTask: string = '';
   nextId: number = this.localId();
   addTask() {
-    console.log('Task #' + this.nextId + ' added');
-    this.taskList.push({
-      id: this.nextId,
-      content: this.newTask,
-      addDate: new Date(),
-      status: 0,
-    });
-    this.newTask = '';
-    this.nextId += 1;
-    localStorage.setItem('localId', JSON.stringify(this.nextId));
-    console.log(this.taskList);
-    localStorage.setItem('localArray', JSON.stringify(this.taskList));
+    if (this.newTask != '') {
+      console.log('Task #' + this.nextId + ' added');
+      this.taskList.push({
+        id: this.nextId,
+        content: this.newTask,
+        addDate: new Date(),
+        status: 0,
+      });
+      this.newTask = '';
+      this.nextId++;
+      localStorage.setItem('localId', JSON.stringify(this.nextId));
+      console.log(this.taskList);
+      localStorage.setItem('localArray', JSON.stringify(this.taskList));
+    }
   }
   startTask(id: number) {
     console.log('Task #' + id + ' started');
